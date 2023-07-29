@@ -27,6 +27,16 @@ weight: 55
 Burn Time: 14.5
 Damage: 1952.5
 
+
+## Velocity Drop
+As a bullet in the real world travels, velocity is dropped over time resulting in less effective stopping power and longer ranges. The library has a function in it that is used to calculate loss of energy the further the bullet has to travel. The function does have the option to keep a certain percentage of damage from being lost. So certain weapons will still have long range effectiveness, even if their damage is still reduced. This also allows armor to be more effective at range and thus add to the realistic behavior.
+
+Going by the 5.56 nato example above, the damage gets lower and lower as the distance increases. This is not tested yet but the dropoff rate likely will need to change depending on engine distance measurements.
+500 units: 1269.125
+1000 units: 878.625
+10000 units: 527.175
+
+
 ## Firing the ammo in a swep
 Call BulletLib.Initialize() to make the library handle body armor resistance with the ammo types. Otherwise higher rounds may do more damage than they should.
 
