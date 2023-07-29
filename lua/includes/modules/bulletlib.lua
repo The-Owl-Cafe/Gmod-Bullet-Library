@@ -55,6 +55,18 @@ function plyMeta:SetArmorType( name )
 end
 
 
+--Further a bullet has to travel, the more energy it loses before impact. Since our damage is representing the energy the bullet has, we plug it into this formula to modify the damage being delt on impact
+--min is a decimal value representing the rough minimum damage percentage to not be lost.
+--if no min value is given it will not have a minimum energy cap applied
+function GetVelocityDrop( damage, distance, min )
+	if min then
+		return damage / ( distance * 0.005 ) + damage * min
+	end
+
+	return damage / ( distance * 0.005 )
+end
+
+
 if CLIENT then return end
 local initialized = false
 
