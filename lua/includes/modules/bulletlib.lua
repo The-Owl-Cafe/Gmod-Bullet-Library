@@ -88,11 +88,18 @@ end
 
 --Handle armor resistence, should also work with weapons that don't use our damage calculations. May result in other weapons doing hilariously low damage or possibly healing targets. Who knows
 if SERVER then
-	hook.Add( "EntityTakeDamage", "BalisticArmorCheck", function( targetm, dmginfo )
-		if target:IsPlayer() and dmginfo:IsBulletDamage() then
-			dmginfo:SubtractDamage( target:GetBulletResistence() )
-		end
-	end)
+	local initialized = false
+
+	function Initialize()
+		if initialized then return end
+		initialized = true
+
+		hook.Add( "EntityTakeDamage", "BalisticArmorCheck", function( targetm, dmginfo )
+			if target:IsPlayer() and dmginfo:IsBulletDamage() then
+				dmginfo:SubtractDamage( target:GetBulletResistence() )
+			end
+		end)
+	end
 end
 
 
