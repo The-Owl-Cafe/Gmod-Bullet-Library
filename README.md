@@ -1,3 +1,5 @@
+# NOTICE: This is Abandoned. The project was originally aimed at improving source engine through use of bullet physics to replace vphysics. However as of late this improvement is unneeded due to modern hardware, proper optimization strategies and Owl Cafe's shift away from the heavy use of serverside lua typically used in Garry's Mod. It is unlikely this will be revisited unless owl cafe ends up in a dire situation where vphysics has reached the limit of what it is capable of handling and no other option is left to remedy it.
+
 # NOTICE:
 Not only are you free to use this in your sweps, I encourage and would love to see this more widely adopted for use. I hate how unrealistic alot of sweps are when it comes to damage aswell as how most servers handle armor for players. I really do prefer it to be more realistic.
 
